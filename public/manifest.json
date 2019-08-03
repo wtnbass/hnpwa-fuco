@@ -1,0 +1,16 @@
+{
+  "name": "Hacker News PWA with fuco",
+  "short_name": "hnpwa-fuco",
+  "description": "hnpwa implemented by fuco",
+  "theme_color": "#ea3e00",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

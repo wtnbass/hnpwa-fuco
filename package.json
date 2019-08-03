@@ -1,0 +1,96 @@
+{
+  "name": "hnpwa-fuco",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "fuco": "1.0.0",
+    "lit-html": "1.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@typescript-eslint/eslint-plugin": "1.13.0",
+    "@typescript-eslint/parser": "1.13.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-template-html-minifier": "3.1.0",
+    "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "5.0.4",
+    "css-loader": "3.1.0",
+    "cssnano": "4.1.10",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-loader": "2.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "file-loader": "4.1.0",
+    "html-webpack-plugin": "3.2.0",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.7.0",
+    "prettier": "1.18.2",
+    "sw-precache-webpack-plugin": "0.11.5",
+    "terser-webpack-plugin": "1.4.1",
+    "to-string-loader": "1.1.5",
+    "ts-loader": "6.0.4",
+    "typescript": "3.5.3",
+    "webpack": "4.38.0",
+    "webpack-assets-manifest": "3.1.1",
+    "webpack-cli": "3.3.6",
+    "webpack-dev-server": "3.7.2"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      [
+        "template-html-minifier",
+        {
+          "modules": {
+            "lit-html": [
+              "html"
+            ],
+            "fuco": [
+              "html",
+              {
+                "name": "css",
+                "encupsulation": "style"
+              }
+            ]
+          },
+          "htmlMinifier": {
+            "collapseWhitespace": true
+          }
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/no-unused-vars": [
+        1,
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    }
+  }
+}

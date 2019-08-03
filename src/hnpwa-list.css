@@ -1,0 +1,25 @@
+.item {
+  margin: 2em 0;
+}
+
+.item::marker {
+  color: var(--light-grey);
+}
+
+.title {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.title:hover {
+  color: var(--second-color);
+}
+
+.domain,
+.detail {
+  color: var(--grey);
+}
+
+.comments {
+  color: var(--second-color);
+}

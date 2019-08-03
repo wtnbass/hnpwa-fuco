@@ -1,0 +1,20 @@
+ul {
+  list-style: none;
+}
+
+summary::marker {
+  content: "[+]";
+  color: var(--light-grey);
+}
+details[open] summary::marker {
+  content: "[-]";
+}
+
+p {
+  color: var(--black);
+  font-weight: 0.9em;
+}
+
+a {
+  color: var(--second-color);
+}

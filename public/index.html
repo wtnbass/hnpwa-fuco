@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="hnpwa implemented by fuco" />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#ea3e00" />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="hnpwa" />
+    <link name="apple-touch-icon" sizes="120x120" href="./favicon.ico" />
+    <title>HNPWA</title>
+    <style>
+      :root {
+        --main-color: #ea3e00;
+        --second-color: #ea0036;
+        --grey: #696969;
+        --light-grey: #999999;
+        --black: #323232;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Roboto", sans-serif;
+        line-height: 1.4;
+      }
+    </style>
+    <link
+      rel="preconnect"
+      href="https://node-hnapp.herokuapp.com/"
+      crossorigin
+    />
+  </head>
+  <body>
+    <noscript>
+      Oops! It seems scripts are disabled or failed to download.
+    </noscript>
+    <hnpwa-app></hnpwa-app>
+
+    <% if (htmlWebpackPlugin.options.isProduction) { %>
+    <script>
+      window.addEventListener("load", function(e) {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("service-worker.js");
+        }
+      });
+    </script>
+    <% } %>
+  </body>
+</html>

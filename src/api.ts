@@ -27,7 +27,7 @@ export interface Comment {
 
 const ENDPOINT = "https://node-hnapi.herokuapp.com";
 
-export async function fetchList(view: View, page: number = 1) {
+export async function fetchList(view: View, page = 1) {
   const res = await fetch(`${ENDPOINT}/${view}?page=${page}`);
   const list = (await res.json()) as Item[];
   return list;
